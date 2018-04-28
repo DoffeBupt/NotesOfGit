@@ -72,6 +72,9 @@ git stash pop # 把缓存中的编辑完的文件再取出来
 	# 这句话理论上只能出现在dev里,不会出现在devtest里
 	>>>>>>> dev
 
-
+## 上传GitHub ##
+在自己的项目文件夹内
+git remote add origin https://github.com/DoffeBupt/NotesOfGit.git
+git push -u origin master # 把master上传到那个库里
 
 
