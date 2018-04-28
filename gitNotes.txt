@@ -22,4 +22,4 @@ git reset --hard HEAD # 将指针恢复到最新一个提交的版本
 git reset --hard HEAD^^^^ = HEAD~4 # 回到往前数4个的更改的版本
 git reset --hard + id 号码 # 回到对应ID对应的版本上去
 git reflog # 查看HEAD指针的变化过程,方便回到未来(查看ID用这个好像更棒)
-# 奔向过去,回到未来之类的只要一reset 就会所有的文件都被恢复到那个时间点
+# 奔向过去,回到未来之类的只要一reset 就会所有的文件都被恢复到那个时间点1
