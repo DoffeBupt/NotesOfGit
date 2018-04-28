@@ -16,10 +16,40 @@ git diff # 最近任何的产生的更改
 git diff --cached # 最近的被add过的文件的视角看的更改
 
 ## 回到从前 ## 
-git commit --amend --no-edit # 这次提交的时候直接复写上次的更改信息,不更改名称
+git commit --amend --no-edit # 这次提交的时候直接复写上次的更改信息,不更改名称 
+# 仿佛不会撤销掉上次更改这次没有更改的东西
 git reset # 从已经add到stage的状态返回到更改后没有add之前的状态
 git reset --hard HEAD # 将指针恢复到最新一个提交的版本
 git reset --hard HEAD^^^^ = HEAD~4 # 回到往前数4个的更改的版本
-git reset --hard + id 号码 # 回到对应ID对应的版本上去
+git reset --hard + id 号码 # 回到对应ID对应的版本上去,或者可以+那个HEAD@{0}啥的
 git reflog # 查看HEAD指针的变化过程,方便回到未来(查看ID用这个好像更棒)
-# 奔向过去,回到未来之类的只要一reset 就会所有的文件都被恢复到那个时间点1
+# 奔向过去,回到未来之类的只要一reset 就会所有的文件都被恢复到那个时间点
+
+## 单个文件回到从前 ##
+git checkout + id + -- + 文件名 
+git checkout c6762a1 -- 1.py # 使得1.py回到6762对应的提交的版本
+
+## 分支 ##
+Master分支,一般是给客户用的稳定版
+Dev 一般是开发版
+git log --oneline --graph # 显示分支的更改日志
+git branch dev # 建立dev分支
+git branch # 查看当前分支 *代表目前处在的分支位置
+git checkout dev # 切换到dev的这个分支
+git branch -d dev # 删除dev分支
+git checkout -b dev # 建立并且跑到dev这个分支上
+git commit -am "注释语句" # add和commit一步到位,注意,只能用于已经链接好的文件
+git merge --no-ff -m "keeep merger info" dev # 在master分支下运行,把dev的版本文件更新到Master里,ff=fastforward,默认为真,此时不能写注释
+
+## merge分支冲突 ##
+# 大概意思是理论上应该只能不停地改dev,然后传给master
+# 然而如果一不小心手贱先改了master,又改了dev,在用dev给master来merge的时候,就不知道怎么新增东西了,新增的内容会产生冲突
+
+
+
+
+
+
+
+
+
