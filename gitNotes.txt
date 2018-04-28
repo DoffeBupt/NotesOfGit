@@ -14,6 +14,9 @@ git log --oneline # 一行版本的
 git add. # add更改,变为stage
 git commit -m "更改信息" # 提交更改,stage变为unmodified
 
+git config --global user.name "Doffe" # 设置全局作者
+git config --global user.email "doffe@bupt.edu.cn" # 设置全局作者邮箱
+
 ## 记录修改 ##
 
 git diff HEAD # 所有的更改
