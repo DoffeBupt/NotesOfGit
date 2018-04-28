@@ -1,7 +1,0 @@
-git add. # add更改,变为stage
-git commit -m "更改信息" # 提交更改,stage变为unmodified
-
-
-git diff HEAD # 所有的更改
-git diff # 最近任何的产生的更改
-git diff --cached # 最近的被add过的文件的视角看的更改
